@@ -44,7 +44,15 @@ This process is known as transfer learning. It essentially allows us to leverage
 First bottlenecks are calculated. Bottlenecks are values calculated for each image in the dataset that are cached and later fed to the classification layer. The bottlenecks are meant to be meaningful and compact pieces of information that the classification layer can use to distinguish the image. Without pre-caching bottlenecks the retraining process would require live calculation of these values at each step and would significatnly increase the total retraining time. 
 
 Retraining is broken down into steps. In each step 10 images are randomly chosen from a training set. Their bottlenecks are then fed to the final layer of the model and used to predict their classification. Whether the classifier was right or wrong will then impact the weights given to the model's parameters. Within each step 3 values are calucalted - training accuracy, cross entropy, and validation accuracy.
+
 Training accuracy tells us what percetage of the traning images were classified correctly
-Cross entropy tells us if the model is learning. A cross entropy that is tending downwards indicates that the model is learning. The objective of training to to make the cross entropy as small as possible.
-Validation accuracy 
+Cross entropy tells us if the model is learning. A cross entropy that is tending downwards indicates that the model is learning. The objective of training is to make the cross entropy as small as possible.
+Validation accuracy is a true indication of the performance of our model. The model is tested against images not included within the training set.
+The following is an example output of a training step. 
+
+`Step 1750: Train accuracy = 95.0%
+Step 1750: Cross entropy = 0.205942
+Step 1750: Validation accuracy = 82.0% (N=100)`
+
+When the validation accuracy is smaller than the training accuracy, that indicates that the model may be too specific to the training data and unable to be generalized to a broader dataset. This is known as overfitting. 
 
