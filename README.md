@@ -33,12 +33,18 @@ Once I had tensorflow installed and the images prepared I proceeded to retrain t
 First I built the retrainer from within the tensorflow source directory
 
 `$ cd tensorflow`
-`bazel build tensorflow/examples/image_retraining:retrain`
+`$ bazel build tensorflow/examples/image_retraining:retrain`
 
 Then I ran the retrainer against my chest xray images. 
 
-`bazel-bin/tensorflow/examples/image_retraining/retrain --image_dir /Users/hali/lungs`
+`$ bazel-bin/tensorflow/examples/image_retraining/retrain --image_dir /Users/hali/lungs`
 
 This process is known as transfer learning. It essentially allows us to leverage the knoweldge of the pre-trained Inception model (trained against the ImageNet database) and apply it to our specific labelled dataset.
 
-Retraining is broken down into steps. In each step 
+First bottlenecks are calculated. Bottlenecks are values calculated for each image in the dataset that are cached and later fed to the classification layer. The bottlenecks are meant to be meaningful and compact pieces of information that the classification layer can use to distinguish the image. Without pre-caching bottlenecks the retraining process would require live calculation of these values at each step and would significatnly increase the total retraining time. 
+
+Retraining is broken down into steps. In each step 10 images are randomly chosen from a training set. Their bottlenecks are then fed to the final layer of the model and used to predict their classification. Whether the classifier was right or wrong will then impact the weights given to the model's parameters. Within each step 3 values are calucalted - training accuracy, cross entropy, and validation accuracy.
+Training accuracy tells us what percetage of the traning images were classified correctly
+Cross entropy tells us if the model is learning. A cross entropy that is tending downwards indicates that the model is learning. The objective of training to to make the cross entropy as small as possible.
+Validation accuracy 
+
