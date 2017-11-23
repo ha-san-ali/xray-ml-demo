@@ -68,7 +68,8 @@ To test, I entered the following into terminal
 bazel-bin/tensorflow/examples/image_retraining/label_image \
 --graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
 --output_layer=final_result:0 \`
---image=$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg```
+--image=$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg
+```
 
 Change `$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg` to point towards the image you want to test.
 
