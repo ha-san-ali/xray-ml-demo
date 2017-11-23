@@ -2,6 +2,8 @@
 The purpose of this repo is to showcase my learning experience with tensorflow. I followed the image classification retraining tutorial found here https://www.tensorflow.org/tutorials/image_retraining.
 I attempted to retrain the final layer of the Inception v3 model against images of chest xrays with and without signs of tuberculosis and then test the newly retrained model.
 
+![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/tf.png?raw=true "tensorflow")
+
 I'm going to preface this by mentoning that I am not a software developer, or data scientist. However, I am curious and interested in the field of machine learning - especiialy its applications to healthcare. 
 
 ## Installation
@@ -13,7 +15,7 @@ Early on I stumbled accross a great collection of labelled chest xrays. These im
 
 I downloaded the Shenzhen images and converted them all from pngs to JPEG format. I seperated the abnormal and normal images into two folders named abnormal and normal (abnormal images end in 1, normal images end in 0). I then put the abnormal and normal folders into a parent folder called lungs. I took out 50 images from the dataset (25 abnormal and 25 normal) for testing later on. 
 
-![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/lungs/Abnormal/CHNCXR_0357_1.jpeg  "Chestxray")
+![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/sample_image_1.jpg?raw=true  "Chestxray")
 
 ## Model Re-training 
 Once I had tensorflow installed and the images prepared I proceeded to retrain the model. 
