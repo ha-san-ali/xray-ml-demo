@@ -64,17 +64,18 @@ I also did my own testing using the 50 images that I removed from the dataset ea
 
 To test, I entered the following into terminal
 
-`bazel build tensorflow/examples/image_retraining:label_image && \`
-`bazel-bin/tensorflow/examples/image_retraining/label_image \`
-`--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \`
-`--output_layer=final_result:0 \`
-`--image=$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg`
+```bazel build tensorflow/examples/image_retraining:label_image && \
+bazel-bin/tensorflow/examples/image_retraining/label_image \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--output_layer=final_result:0 \`
+--image=$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg```
 
 Change `$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg` to point towards the image you want to test.
 
 After a few minutes tensorflow spit out the following
 
 `abnormal (score = 0.96525)`
+
 `normal (score = 0.03475)`
 
 So what does this mean? The model was able to deduce that the image that I presented to it was more similar to an abnormal chest-xray than a normal one, and thus was likely an image of an abnormal chest-xray. It also tells us the strength of the prediction. For this particular image the model was very confident with it's prediction.
