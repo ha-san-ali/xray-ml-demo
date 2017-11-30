@@ -104,9 +104,8 @@ At this point I was pleased with myself for having a functioning model with dece
 
 Some ways to increase the generalizability of the model would be to increase the size of the dataset, add more variance to the images, play with hyperparameters, add x-rays presented in different ways, and add noise to the images. Humans come in all shapes and sizes, it's important to include images that represent as many variations as possible in order to make the model more robust.
 
-It is important to note that I only retrained the model on chest x-rays. What would happen if I present it something completely different?
+I only retrained the model on chest x-rays. So what would happen if I present it something completely different?
 
-I presented to it the following image.
 ![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/cow.jpg?raw=true "cow")
 
 One would suspect that an image of a cow would not be associated with either abnormal or normal chest x-rays, however the model stated differently... 
@@ -116,7 +115,7 @@ normal (score = 0.99828)
 abnormal (score = 0.00172)
 ```
 
-In fact, the model presents a near 100% association to normal chest x-rays. ??? What features could possibly exist within this cow image that are so strongly associated with features of normal chest x-rays? To answer that question is my next task.
+In fact, the model presents a near 100% association to normal chest x-rays ??? What features could possibly exist within this cow image that are so strongly associated with features of normal chest x-rays? To answer that question is my next task.
 I look forward to exploring the mechanism by which the model is able to detect features, and how it uses those features in classification. 
 
 
