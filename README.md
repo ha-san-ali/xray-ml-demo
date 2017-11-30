@@ -50,8 +50,11 @@ First, bottlenecks are calculated. Bottlenecks are values for each image in the 
 Retraining is broken down into steps. In each step 10 images are randomly chosen from a training set. Their bottlenecks are then fed to the final layer of the model and used to predict their classification. Whether the classifier was right or wrong will then impact the weights given to the nodes in the model. Within each step 3 values are calculated - training accuracy, cross entropy, and validation accuracy.
 
 Training accuracy tells us what percentage of the training images were classified correctly.
+
 Cross entropy values will trend downwards if the model is learning. The objective of training is to make the cross entropy as small as possible.
+
 Validation accuracy is a true indication of the performance of the model. 
+
 The following is an example output of a training step. 
 
 `Step 1750: Train accuracy = 95.0%`
