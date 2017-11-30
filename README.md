@@ -119,4 +119,6 @@ abnormal (score = 0.00172)
 In fact, the model presents a near 100% association to normal chest x-rays. ??? What features could possibly exist within this cow image that are so strongly associated with features of normal chest x-rays? To answer that question is my next task.
 I look forward to exploring the mechanism by which the model is able to detect features, and how it uses those features in classification. 
 
-** Please note, I am not a machine learning expert. If any information in this article appears inaccurate let me know!
+
+
+**  If any information in this article appears inaccurate let me know!
