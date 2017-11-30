@@ -11,9 +11,9 @@ The beauty of this exercise is that it doesn't require a great deal of programmi
 
 The Inception model is a convolutional neural network. If that sounds confusing, just understand that the model can detect features of images and classify new images based on those features. A feature is an observation of the data. Humans have unique features, which is why we can tell a human is a human, or a dog is a dog, or a pizza is a pizza. Using methods such as shape detection, corner detection, and blob detection the model can identify features of images. For example, if enough pizza images seen by the model are round, the model may begin to associate _roundedness_ with pizzas and apply that knowledge to any new image it encounters. 
 
-Inception is trained on a vast image database known as ImageNet. ImageNet images are pre-classified so that identified features can be attributed to those classes. We can use a technique called transfer learning to retrain the inception model with any class of images we want, In this case chest x-rays with and without tuberculosis. 
+Inception is trained on a vast image database known as ImageNet. ImageNet images are pre-classified so that identified features can be attributed to those classes. We can use a technique called transfer learning to retrain the inception model with any class of images we want, in this case chest x-rays with and without tuberculosis. 
 
-These concepts are easier to understand a we go through the exercise. 
+These concepts become easier to understand as we go through the exercise. 
 
 ## Installation
 
