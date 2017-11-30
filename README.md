@@ -4,7 +4,7 @@ I attempted to retrain the final layer of the Inception v3 model against images 
 
 ![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/tf.png?raw=true "tensorflow")
 
-I'm going to preface this by mentioning that I am not a software developer, or data scientist. However, I am curious and interested in the field of machine learning - especially its applications to healthcare. 
+I'm going to preface this by mentioning that I am not a developer, or data scientist. However, I am curious and interested in the field of machine learning - especially its applications to healthcare. 
 
 ## Installation
 Rather than lead you astray with my own installation instructions, I recommend that anyone wanting to follow what I did use the official instructions from tensorflow https://www.tensorflow.org/install/install_sources.
@@ -15,7 +15,7 @@ Early on I stumbled across a great collection of labelled chest x-rays. These im
 
 I downloaded the Shenzhen images and converted them all from pngs to JPEG format. I separated the abnormal and normal images into two folders (abnormal images end in 1, normal images end in 0). Then I put the abnormal and normal folders into a parent folder called lungs. I took out 50 images from the dataset (25 abnormal and 25 normal) for testing later on. 
 
-![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/sample_image_1.jpg?raw=true  "Chestxray")
+![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/sample_image_1.jpg?raw=true  "chest x-ray")
 
 ## Model Re-training 
 Once I had tensorflow installed and the images prepared I proceeded to retrain the model. 
