@@ -95,6 +95,7 @@ One that that must be remembered is that I only retrained the model on chest x-r
 
 I presented to it the following image.
 ![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/cow.jpg?raw=true "cow")
+
 One would suspect that an image of a cow would not be associated with either an abnormal or normal chest x-ray, however the model stated differently. 
 
 ```normal (score = 0.99828)
