@@ -1,7 +1,7 @@
 ## Intro
 
 The purpose of this repo is to showcase my learning experience with tensorflow. I followed the image classification retraining tutorial found here https://www.tensorflow.org/tutorials/image_retraining.
-I attempted to retrain the final layer of the Inception v3 model against images of chest x-rays with and without signs of tuberculosis. Or in plain english, I wanted to see if I could diagnose tuberculosis with machine learning!
+I attempted to retrain the final layer of the Inception v3 model against images of chest x-rays with and without signs of tuberculosis. Or in plain English, I wanted to see if I could diagnose tuberculosis with machine learning!
 
 ![alt text](https://github.com/Ha-san-ali/xray-ml-demo/blob/master/tf.png?raw=true "tensorflow")
 
@@ -9,7 +9,7 @@ The beauty of this exercise is that it doesn't require a great deal of programmi
 
 ## Background
 
-The Inception model is a convolutional neural network. If that sounds confusing, just understand that the model can detect features of images and classify new images based on those features. A feature is an observation of the data. Humans have unique features, which is why we can tell a human is a human, or a dog is a dog, or a pizza is a pizza. Using methods such as shape detection, corner detection, and blob detection the model can identify features of images. For example, If enough pizza images seen by the model are round, the model may begin to associate _roundedness_ with pizzas and apply that knowledge to any new images it encounters. 
+The Inception model is a convolutional neural network. If that sounds confusing, just understand that the model can detect features of images and classify new images based on those features. A feature is an observation of the data. Humans have unique features, which is why we can tell a human is a human, or a dog is a dog, or a pizza is a pizza. Using methods such as shape detection, corner detection, and blob detection the model can identify features of images. For example, ff enough pizza images seen by the model are round, the model may begin to associate _roundedness_ with pizzas and apply that knowledge to any new images it encounters. 
 
 Inception is trained on a vast image database known as ImageNet. ImageNet images are pre-classified so that identified features can be attributed to those classes. We can use a technique called transfer learning to retrain the inception model with any class of images we want, In this case chest x-rays with and without tuberculosis. 
 
@@ -31,7 +31,7 @@ I downloaded the Shenzhen images and converted them all from pngs to JPEG format
 
 Once I had tensorflow installed and the images prepared I proceeded to retrain the model. 
 
-First I built the retrainer from within the tensorflow source directory. This took just over an hour on my four year old Mac. I did it in terminal with the following commands
+First, I built the retrainer from within the tensorflow source directory. This took just over an hour on my four year old Mac. I did it in terminal with the following commands
 
 `$ cd tensorflow`
 
@@ -79,7 +79,7 @@ bazel-bin/tensorflow/examples/image_retraining/label_image \
 --image=$HOME/desktop/abnormal_test/CHNCXR_0327_1.jpeg
 ```
 
-Change `$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg` to point at the image you want to test.
+Change `$HOME/desktop/abnormal_test/CHNCXR_0327_1.jpeg` to point at the image you want to test.
 
 After a few moments tensorflow spit out the following
 
@@ -102,7 +102,7 @@ By looking strictly at whether my model was right or wrong - and not considering
 
 At this point I was pleased with myself for having a functioning model with decent results. However, I wasn't aware of _how_ my model was differentiating between the images, or _why_ it was correctly classifying some images and not others.  I discovered that my dataset was small, all of my images came from one hospital, the population they came from was the same, and the way in which the pictures were presented was always the same. These factors directly impact the _generalizability_ of the model. That is to say, the model may only be effective for the particular dataset that I have presented. 
 
-Some ways to increase the generalizability of the model would be to increase the size of the dataset, add more variance to the images, play with hyperparameters, add x-rays presented in different ways, and add noise to the images. Humans come in all shapes and sizes, its important to include images that represent as many variations as possible in order to make the model more robust.
+Some ways to increase the generalizability of the model would be to increase the size of the dataset, add more variance to the images, play with hyperparameters, add x-rays presented in different ways, and add noise to the images. Humans come in all shapes and sizes, it's important to include images that represent as many variations as possible in order to make the model more robust.
 
 It is important to note that I only retrained the model on chest x-rays. What would happen if I present it something completely different?
 
