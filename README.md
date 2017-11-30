@@ -60,7 +60,8 @@ I also did my own testing using the 50 images that I removed from the dataset ea
 
 To test, I entered the following into terminal
 
-```bazel build tensorflow/examples/image_retraining:label_image && \
+```
+bazel build tensorflow/examples/image_retraining:label_image && \
 bazel-bin/tensorflow/examples/image_retraining/label_image \
 --graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
 --output_layer=final_result:0 \`
@@ -71,7 +72,8 @@ Change `$HOME/desktop/abnormal_extra_jpg/CHNCXR_0327_1.jpeg` to point at the ima
 
 After a few moments tensorflow spit out the following
 
-```abnormal (score = 0.96525)
+```
+abnormal (score = 0.96525)
 normal (score = 0.03475)
 ```
 
@@ -98,7 +100,8 @@ I presented to it the following image.
 
 One would suspect that an image of a cow would not be associated with either an abnormal or normal chest x-ray, however the model stated differently. 
 
-```normal (score = 0.99828)
+```
+normal (score = 0.99828)
 abnormal (score = 0.00172)
 ```
 
