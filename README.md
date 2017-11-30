@@ -96,7 +96,7 @@ There are various things that can be done to the dataset and the model in order 
 
 I tested my dataset with 3 different parameter settings, focusing solely on training steps and learning rate. I was able to achieve slightly different results with different parameters. Later, I found I was also able to improve accuracy by using higher quality JPEG images.
 
-By looking strictly at whether my model was right or wrong - and not considering strength of association. My model went from being correct **60%** of the time, to **74%** of the time, to **78%** of the time. This was done through increasing the number of training steps, playing around with the learning rate, and removing hard-to-classify images from the dataset. 
+By looking strictly at whether my model was right or wrong, (not considering strength of association) my model went from being correct **60%** of the time, to **74%** of the time, to **78%** of the time. This was done through increasing the number of training steps, playing around with the learning rate, and removing hard-to-classify images from the dataset. 
 
 ## Assumptions and Errors
 
